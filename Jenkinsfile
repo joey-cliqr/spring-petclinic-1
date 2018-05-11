@@ -16,7 +16,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t shanem/spring-petclinic-1:latest .'
+        sh 'docker build -t jomerz/spring-petclinic-1:latest .'
       }
     }
     stage('Docker Push') {
