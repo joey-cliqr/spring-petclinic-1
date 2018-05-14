@@ -31,7 +31,7 @@ pipeline {
     stage('C3 Deploy') {
       agent any
       steps {
-        sh 'c3deploy.sh'
+        sh '/home/cliqr/spring-petclinic-1/c3deploy.sh'
       }
     }    
   }
