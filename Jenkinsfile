@@ -30,7 +30,7 @@ pipeline {
     stage('C3 Deploy') {
       agent any
       steps {
-        sh "c3deploy.sh"
+        sh 'c3deploy.sh'
       }
     }
    }
