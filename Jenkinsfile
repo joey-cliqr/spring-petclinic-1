@@ -22,17 +22,17 @@ pipeline {
     stage('Docker Push') {
       agent any
       steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', username$
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push jomerz/spring-petclinic-1:latest'
         }
       }
-    stage('CloudCenter Deploy') {
+    stage('C3 Deploy') {
       agent any
       steps {
         sh 'c3deploy.sh'
       }
-    }
+    } 
     }
   }
 }
