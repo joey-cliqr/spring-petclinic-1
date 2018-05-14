@@ -10,7 +10,7 @@ curl -k -X POST \
   -d '{
         "appId": "12616",
         "appVersion": "1",
-        "name": "Pipeline_$JOB_NAME_$BUILD_NUMBER",
+        "name": "Pipeline_Test001",
         "metadatas": [
                 {
                         "namespace": "",
