@@ -32,7 +32,7 @@ pipeline {
       agent any
       steps {
 	sh 'job_name=${env.JOB_NAME}'
-        sh './c3deploy.sh'
+        sh './c3deploy.sh job_name'
       }
     }    
   }

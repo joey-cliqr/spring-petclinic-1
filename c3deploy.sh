@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "job name:$job_name"
 curl -k -X POST \
   https://sandbox.cliqr.com/v2/jobs \
   -H 'Accept: application/json' \
@@ -10,7 +11,7 @@ curl -k -X POST \
   -d '{
         "appId": "12616",
         "appVersion": "1",
-        "name": "Pipeline_$job_name",
+        "name": "Pipeline_Test00001",
         "metadatas": [
                 {
                         "namespace": "",
