@@ -27,6 +27,12 @@ pipeline {
           sh 'docker push jomerz/spring-petclinic-1:latest'
         }
       }
+      stage('Docker C3 Deploy') {
+        agent any
+        steps {
+            sh "c3deploy.sh"
+         }
+      }
+     }
     }
   }
-}
