@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "job name:$job_name"
+echo "job name:$1"
 curl -k -X POST \
   https://sandbox.cliqr.com/v2/jobs \
   -H 'Accept: application/json' \
