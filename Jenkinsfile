@@ -6,8 +6,7 @@ pipeline {
     stage('C3 Deploy') {
       agent any
       steps {
-	sh 'job_name=${JOB_NAME}'
-        sh './c3deploy.sh ${JOB_NAME}'
+        sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER}'
       }
     }    
   }

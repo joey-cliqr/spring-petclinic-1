@@ -11,7 +11,7 @@ curl -k -X POST \
   -d '{
         "appId": "12616",
         "appVersion": "1",
-        "name": "'$1'",
+        "name": "'$1'""_""'$2'",
         "metadatas": [
                 {
                         "namespace": "",
