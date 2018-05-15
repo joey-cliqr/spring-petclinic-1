@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "job name:$1"
+c3jobname=$1$2
 curl -k -X POST \
   https://sandbox.cliqr.com/v2/jobs \
   -H 'Accept: application/json' \
@@ -11,7 +12,7 @@ curl -k -X POST \
   -d '{
         "appId": "12616",
         "appVersion": "1",
-        "name": "'$1'",
+        "name": "'$c3jobname'",
         "metadatas": [
                 {
                         "namespace": "",
