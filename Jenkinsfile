@@ -7,7 +7,7 @@ pipeline {
       agent any
       steps {
 	sh 'job_name=${JOB_NAME}'
-        sh './c3deploy.sh job_name'
+        sh './c3deploy.sh ${JOB_NAME}'
       }
     }    
   }
