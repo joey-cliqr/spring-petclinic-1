@@ -60,7 +60,7 @@ curl -k -X POST \
                                         "cloudProperties": [
                                                 {
                                                         "name": "namespace",
-                                                        "value": "default"
+                                                        "value": "dev"
                                                 }
                                         ],
                                         "nics": [],
