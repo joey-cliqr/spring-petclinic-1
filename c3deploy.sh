@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "job name:$1"
 c3jobname=$1$2
+c3namespace=$3
+echo "namespace:$c3namespace"
 curl -k -X POST \
   https://sandbox.cliqr.com/v2/jobs \
   -H 'Accept: application/json' \
@@ -60,7 +62,7 @@ curl -k -X POST \
                                         "cloudProperties": [
                                                 {
                                                         "name": "namespace",
-                                                        "value": "default"
+                                                        "value": "'$c3namespace'"
                                                 }
                                         ],
                                         "nics": [],

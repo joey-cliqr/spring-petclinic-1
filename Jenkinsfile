@@ -8,7 +8,7 @@ pipeline {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "unit" }
                         }
-                        steps {sh './c3deployunit.sh ${JOB_NAME} ${BUILD_NUMBER}'
+                        steps {sh './c3deployunit.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
                         }
 
                                         }
