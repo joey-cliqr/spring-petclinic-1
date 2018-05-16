@@ -2,15 +2,22 @@
 
 pipeline {
   agent none
+  parameters {
+        choice(
+            choices: 'unit\dev\qa\stage\prod',
+            description: '',
+            name: 'DEPLOYment_ENVIRONMENT')
+    }
   stages {
      stage('C3 Deploy') {
       agent any
-      if (env.deployment_environment="Test"){
+      when {
+	expression { params.DEPLOYMENT_ENVIRONMENT="dev"){
 	steps {
 	  sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER}'
       	}
       }else{
-	echo "Not Test"
+	echo "Not dev"
       }
     }    
   }
