@@ -9,9 +9,13 @@ pipeline {
 	expression { params.DEPLOYMENT_ENVIRONMENT="dev"}{
 	steps {
 	  sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER}'
-      	}
-      }else{
-	echo "Not dev"
+      }
+      when {
+        expression { params.DEPLOYMENT_ENVIRONMENT="qa"}{
+        steps {
+          echo "Got to qa"
+      }
+
       }
     }    
   }
