@@ -40,7 +40,7 @@ pipeline {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "dev" }
                         }
-                        steps {sh './c3deploydev.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
+                        steps {sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
                         }
 
                                         }
@@ -48,7 +48,7 @@ pipeline {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "qa" }
                         }
-                        steps {sh './c3deployqa.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
+                        steps {sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
                         }
 
                                         }
@@ -56,7 +56,7 @@ pipeline {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "stage" }
                         }
-                        steps {sh './c3deploystage.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
+                        steps {sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
                         }
 
                                         }
@@ -64,7 +64,7 @@ pipeline {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "prod" }
                         }
-                        steps {sh './c3deployprod.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
+                        steps {sh './c3deploy.sh ${JOB_NAME} ${BUILD_NUMBER} ${DEPLOYMENT_ENVIRONMENT}'
                         }
 
                                         }
