@@ -2,12 +2,6 @@
 
 pipeline {
   agent none
-  parameters {
-        choice(
-            choices: 'unit\dev\qa\stage\prod',
-            description: '',
-            name: 'DEPLOYment_ENVIRONMENT')
-    }
   stages {
      stage('C3 Deploy') {
       agent any
