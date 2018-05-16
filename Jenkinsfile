@@ -20,7 +20,6 @@ pipeline {
                         }
 
                                         }
-                }
                 stage('C3 Deploy to QA') {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "qa" }
@@ -29,7 +28,6 @@ pipeline {
                         }
 
                                         }
-                }
                 stage('C3 Deploy to Stage') {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "stage" }
@@ -38,7 +36,6 @@ pipeline {
                         }
 
                                         }
-                }
                 stage('C3 Deploy to Production') {
                 agent any
                         when { expression { params.DEPLOYMENT_ENVIRONMENT == "prod" }
